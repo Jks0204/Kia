@@ -5,35 +5,30 @@
     background: black; color:white;
 }
 
-/* Add a dark background color with a little bit see-through */
 .navbar {
+    margin-top:20px;
     margin-bottom: 0;
     background-color: transparent;
     border: 0;
-    font-size: 15px !important;
+    font-size: 20px !important;
     letter-spacing: 4px;
+}
+.navbar .navbar-brand{
+    width:100px; padding-top:10px; position: absolute; left:45%;
 }
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
 }
-  
-/* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
-  
-/* Dropdown */
 .open .dropdown-toggle {
-    color: #fff ;
-    background-color: #555 !important;
+    color: #fff ; 
+    background-color: transparent !important;
 }
-  
-/* Dropdown links */
 .dropdown-menu li a {
     color: #000 !important;
 }
-  
-    /* On hover, the dropdown links will turn red */
 .dropdown-menu li a:hover {
     color: white !important; background-color: black; 
 }
@@ -45,8 +40,14 @@
 
 
 .carousel-caption{
-    position:absolute; left:30px; bottom:250px; text-align: left;
+    position:absolute; left:80px; bottom:15%;
+    text-align: left;
+    font-size: 20px;
 }
+.carousel-caption h3{
+    font-size: 40px; font-weight: 600;
+}
+
 
 /* bestKia */
 #bestKia h3{
@@ -89,7 +90,7 @@
 #bestKia .btn-box{
     text-align: center;
 }
-.sort{
+#bestKia .sort{
     text-align: center;
     padding:30px;
     margin-bottom:30px;
@@ -224,13 +225,16 @@
 
 /* footer */
 #footer1{
-    background: #05141f; color:white;
+    background: #05141f; color:white; padding: 0 50px 15px;
 }
 #footer2{
-    background: #010E18; color:#697279; padding:0;
+    background: #010E18; color:#697279; padding-left:50px !important;
+}
+#footer1 .col-sm-12 img{
+    margin: 30px 0 20px;
 }
 #footer1 ul, #footer2 ul{
-    list-style: none;
+    list-style: none; padding:0;
 }
 #footer1 .col-sm-3:nth-child(1){
     font-size:17px; line-height: 34px; font-weight: 500;
@@ -239,7 +243,8 @@
     margin-top:20px;
 }
 #footer1 .col-sm-3:nth-child(2){
-    color:#697279;
+    color:#697279; font-size: 14px; line-height: 28px;
+    padding-left: 100px;
 }
 #footer1 .col-sm-6 li{
     display:inline;
@@ -248,12 +253,37 @@
     display:inline-block;
     padding:10px;
 }
+#footer1 .col-sm-6 > div >div{
+    display: inline-block; padding-left: 20px;
+}
+#footer1 .col-sm-6 .btn{
+    width:250px; background: #010E18; color:white;
+}
+
 #footer1 .col-sm-6 ul{
     position: absolute; right:0;
 }
+#footer1 .col-sm-6 > div{
+    position: absolute; right:0; top:160px;
+}
+#footer1 .col-sm-6 .dropdown-menu {
+    position: absolute;
+    background: #010E18;
+    min-width: 160px;
+  }
+  
+#footer1 .col-sm-6 .dropdown-menu a{
+    color: white !important;
+    padding: 12px 16px;
+    display: block;
+  }
+
 
 #footer2 .col-sm-3, #footer2 .col-sm-9{
     float:right; text-align: center;
+}
+#footer2 .col-sm-3{
+    text-align:left;
 }
 #footer2 .col-sm-9 li{
     display:inline;
@@ -265,15 +295,38 @@
 #footer2 .col-sm-3 div{
     padding-top:10px;
 }
-
 #collapse{
     display: none;
 }
-
+#footer2 {
+    padding-left:30px;
+}
+#footer2 .award{
+    padding:0; width:300px; display: inline-block;
+}
+#footer2 .award img, #footer2 .award ul{
+    padding:0; display:inline-block;
+}
+#footer2 .award img{
+    width:8%; position: relative; bottom:37px;
+}
+#footer2 .award ul{
+    width:88%; margin-left:1%;
+}
 
 @media screen and (max-width:767px){
     #myCarousel .carousel-inner .item img:nth-child(1) {display: none;}
     #myCarousel .carousel-inner .item img:nth-child(2) {display: block;}
+    .carousel-caption{
+        position:absolute; left:30px; bottom:250px;
+    }
+
+    #bestKia .box{
+        margin-bottom: 50px; 
+    }
+    #bestKia .sort{
+        padding-top:0; padding-bottom: 70px;
+    }
 
     #news .col-sm-6 img:nth-child(1) {display: none;}
     #news .col-sm-6 img:nth-child(2) {display:block;}
@@ -284,12 +337,17 @@
     #news .col-sm-4 {padding:0px 30px 20px;}
     #news2 {margin-bottom: 50px;}
 
+    #footer1 .col-sm-12 img{
+        margin-top:30px; margin-bottom: 30px; width:70px;
+    }
+    #footer1 .col-sm-3:nth-child(1){
+        font-size:14px; line-height: 39px; font-weight: 500;
+    }
     #footer1 .col-sm-3:nth-child(2) {display:none;}
     #footer1 .col-sm-6 {display:none;}
     #collapse {display:block;}
     #collapse .collapsible {
-        background-color: #777;
-        color: white;
+        background: #010E18; color:white;
         cursor: pointer;
         padding: 18px;
         width: 100%;
@@ -298,9 +356,7 @@
         outline: none;
         font-size: 15px;
     }
-    #collapse .active, .collapsible:hover {
-        background-color: #555;
-    }
+
     #collapse .collapsible:after {
         content: '\002B';
         color: white;
@@ -318,6 +374,11 @@
         transition: max-height 0.2s ease-out;
         background-color: #f1f1f1;
     }
-    #footer2 .container .row:last-child {display:none;}
-    #footer2 .col-sm-3{width:100%;}
+    #collapse a{
+        color: #69728D; font-size: 16px;
+        display:block; margin:5px;
+    }
+    #footer2 .row:last-child {display:none;}
+    #footer2 .col-sm-3{width:100%; margin-bottom: 20px; text-align: center;}
+    #footer2 .award{display: none;}
 }
