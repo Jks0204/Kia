@@ -5,6 +5,42 @@
     background: black; color:white;
 }
 
+/* modal ----------------------------------------------------------------------*/
+#modal_info{
+    width:500px;
+    height:400px;
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+    z-index:100;
+    display: none;
+}
+#modal_bg{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 50;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#modal_info button{
+    position: absolute;
+    top:5px; right:5px;
+    border:none; background: none;
+    width:30px; height: 30px;
+    font-size: 30px;
+}
+#modal_info h4{
+    font-weight: 600; text-align: center;
+    margin: 50px 0 30px;
+}
+#modal_info li{
+    margin-bottom: 20px; padding-right: 30px;
+}
+
+/* nav bar ----------------------------------------------------------- */
 .navbar {
     margin-top:20px;
     margin-bottom: 0;
@@ -49,12 +85,10 @@
     display:none;
 }
 
-/* carousel */
+/* carousel ---------------------------------------------------------------*/
 
 #myCarousel .carousel-inner .item img:nth-child(1) {display: block;}
 #myCarousel .carousel-inner .item img:nth-child(2) {display: none;}
-
-
 .carousel-caption{
     position:absolute; left:80px; bottom:15%;
     text-align: left;
@@ -65,7 +99,7 @@
 }
 
 
-/* bestKia */
+/* bestKia --------------------------------------------------------------*/
 #bestKia h3{
     font-size: 50px; font-weight: 700;
     margin-top: 150px;
@@ -100,11 +134,17 @@
 #bestKia .box .btn{
     border-radius: 0;
 }
-.btn-black:hover{
+#bestKia .btn-black{
+    background: #05141F; color:#ddd;
+}
+#bestKia .btn-black, .btn-default{
+    margin:5px;
+}
+#bestKia .btn-black:hover{
     background: rgb(130,130,130); color:#ddd;
 }
 #bestKia .btn-box{
-    text-align: center;
+    text-align: center; 
 }
 #bestKia .sort{
     text-align: center;
@@ -126,9 +166,6 @@
 #bestKia .box .col-sm-4{
     font-weight:700; font-size:13px;
 }
-#bestKia .box .col-sm-8{
-    font-size:13px;
-}
 #bestKia .box .price{
     font-size: 20px; font-weight: 600;
     margin-bottom: 20px;
@@ -136,20 +173,26 @@
 #bestKia .btn{
     width:140px;
 }
-#menu3 .col-sm-8 .btn{
-    width:20px; height:20px; padding:0; border:none; position: relative; bottom:7px;
+#bestKia .box .col-sm-8{
+    font-size:13px;
 }
-#menu3 .col-sm-8 img{
-    width:100%; height: 100%; position: relative; bottom:45px;
+#bestKia .btn_icon{
+    height: 30px; overflow: hidden;
 }
-#bestKia .col-sm-8 .modal-header{
-    text-align: center; margin-top: 20px; border:none;
+#bestKia .modal_btn{
+    border:none; background: none;
+    width:30px; height:20px; margin-bottom: 0; padding:0;
 }
-#bestKia .col-sm-8 .modal-body li{
-    text-align: left;  margin:30px; margin-top:10px;
+#bestKia .modal_btn img{
+    width:30px; height:20px; border:none;
+    position: relative; bottom:50px;
+    margin-bottom: 0; padding: 0;
+}
+#carousel1, #carousel2, #carousel3, #carousel4{
+    display:none;
 }
 
-/* Etc */
+/* Etc -----------------------------------------------------------------------*/
 #etc{
     margin-bottom: 60px;
 }
@@ -193,18 +236,16 @@
 #etc .box:hover .aft{
     display:inline;
 }
-
 #etc .box:hover{
     background: #13212B; color:white;
 }
 
-/* news */
+/* news --------------------------------------------------------------------*/
 #news h3{
     font-size: 50px; font-weight: 700;
     padding-top:30px;
     padding-bottom:40px;
 } 
-
 #news .col-sm-6 img:nth-child(1){display:block;}
 #news .col-sm-6 img:nth-child(2){display:none;}
 #news .col-sm-6{
@@ -231,7 +272,6 @@
 #news1{
     margin-bottom: 40px;
 }
-
 #news .col-sm-4{
     padding:20px 20px 150px;
 }
@@ -242,7 +282,7 @@
     font-weight: 600; font-size: 19px;
 }
 
-/* footer */
+/* footer ----------------------------------------------------------------------*/
 #footer1{
     background: #05141f; color:white; padding: 0 50px 15px;
 }
@@ -278,7 +318,6 @@
 #footer1 .col-sm-6 .btn{
     width:250px; background: #010E18; color:white;
 }
-
 #footer1 .col-sm-6 ul{
     position: absolute; right:0;
 }
@@ -292,13 +331,12 @@
     height:220px;
     overflow: auto;
     border: 0.5px solid gray;
-  }
-  
+}
 #footer1 .col-sm-6 .dropdown-menu a{
     color: white !important;
     padding: 12px 16px;
     display: block;
-  }
+}
 
 
 #footer2 .col-sm-3, #footer2 .col-sm-9{
@@ -348,6 +386,9 @@
     .navbar .nav a{
         background-color: rgba(255, 255, 255, 0.1) !important; color: black !important;
     }
+    .navbar .nav li:hover{  
+        background-color: rgba(255, 255, 255, 0.5);
+    }
     #myNavbar{
         border:none;
     }
@@ -368,12 +409,35 @@
         position:absolute; left:30px; bottom:250px;
     }
 
+    #bestKia h3{
+        font-size: 27px; font-weight: 700;
+        margin-top: 90px;
+        margin-bottom: 40px;
+    }
     #bestKia .box{
         margin-bottom: 50px; 
     }
     #bestKia .sort{
         padding-top:0; padding-bottom: 70px;
     }
+    #bestKia .carousel-indicators li{
+        border:1px solid #05141F;
+    }   
+    #bestKia .carousel-indicators .active{
+        background-color:#05141F;
+    }
+    #bestKia .btn-box{
+        width:100%;
+    }
+    #bestKia .btn-black, #bestKia .btn-default{
+        width:45%; margin:2%;
+    }
+    #home > .row > .col-sm-4, #menu1 > .row > .col-sm-4, #menu2 > .row > .col-sm-4, #menu3 > .row > .col-sm-4{
+        display: none;
+    }
+    #carousel1, #carousel2, #carousel3, #carousel4{
+        display:flex;
+    } 
 
     #news .col-sm-6 img:nth-child(1) {display: none;}
     #news .col-sm-6 img:nth-child(2) {display:block;}
@@ -403,13 +467,11 @@
         outline: none;
         font-size: 15px;
     }
-
     #collapse .collapsible:after {
         content: '\002B';
         color: white;
         font-weight: bold;
         float: right;
-    
     }
     #collapse .active:after {
         content: "\2212";
@@ -428,5 +490,5 @@
         display:block; margin:5px;
     }
     #footer2 .col-sm-3{width:100%; margin-bottom: 20px; text-align: center;}
-    #footer2 .award{display: none;}
+    #footer2 .award{display: none;} 
 }

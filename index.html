@@ -8,12 +8,57 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link href="css/kia.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(window).width()>767){
+                    if($(window).scrollTop()>2100){
+                        $("#news2").addClass("animate__fadeInUp");  
+                    } else{
+                        $("#news2").removeClass("animate__fadeInUp");
+                    }
+
+                } else{
+                    if($(window).scrollTop()>3300){
+                        $("#news2").addClass("animate__fadeInUp");  
+                    } else{
+                        $("#news2").removeClass("animate__fadeInUp");
+                    }
+                }
+            })
+
+            $(".modal_btn").click(function(){
+                $("#modal_info").fadeIn(500);
+                $("#modal_bg").fadeIn(500);
+                $("body").css("overflow","hidden")
+            })
+            $(".modal_close").click(function(){
+                $("#modal_info").fadeOut();
+                $("#modal_bg").fadeOut();
+                $("body").css("overflow","auto")
+            })
+        })
+    </script>
 </head>
 <body>
+    <!-- modal ------------------------------------------------------>
+    <div id="modal_info">
+        <button class="modal_close">&times;</button>
+        <h4 class="modal-title">신차 안전도 평가 안내</h4>
+        <ul>
+            <li>본 신차안전도 평가결과는 국토교통부 주관 안전도 평가 후 발표된 자료입니다.(교통안전공단 자세한 내용 <span style="text-decoration:underline">www.kncap.org</span> 참조)</li>
+            <li>안전도 종합등급 안전도평가에서 실시하고 있는 정면충돌, 측면충돌, 보행자 등 22개 항목의 평가 결과를 종합하여 평가 대상 차량의 안전도를 등급(1~5등급)과 점수(100점 만점)로 소비자들에게 제공합니다.</li>
+            <li>1등급일수록 가장 안전한 차량입니다.</li>
+            <li>매년 자동차 판매수가 많거나 판매가 급증 추세인 차 그리고 과거 평가를 하지 않은 모델 중에서 평가를 실시하며, 평가에 사용된 차량의 에어백 등의 안전장비는 실제 구입하시는 차량과 다를 수 있으므로 확인 하시길 바랍니다.</li>
+        </ul>
+    </div>
+    <div id="modal_bg"></div>
+
     <!-- navbigation ------------------------------------------------------------------------------------>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -130,6 +175,126 @@
             <!-- 최근출시 -->
             <div id="home" class="tab-pane fade in active">
                 <div class="row">
+                    <!-- 모바일 -->
+                    <div id="carousel1" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel1" data-slide-to="1"></li>
+                          <li data-target="#carousel1" data-slide-to="2"></li>
+                        </ol>
+                      
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="box">
+                                    <h4>The new EV6
+                                        <span class="badge">TOP 1</span>
+                                    </h4>
+                                    <div>EV전기차  | 롱레인지 GT-line 4WD A/T</div>
+                                    <img src="img/car01.png" alt="The new EV6" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">출시일</div>
+                                        <div class="col-sm-8">2024-05-14</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배터리 용량</div>
+                                        <div class="col-sm-8">84 kWh</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">239 kW / 325 ps</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">외장컬러</div>
+                                        <div class="col-sm-8">요트 매트 블루</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(6)</div>
+                                        <div class="col-sm-8">스웨이드 컬렉션<br>빌트인 캠 2<br>메리디안 프리미엄 사운드 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">70,150,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>The 2024 K9
+                                        <span class="badge">TOP 2</span>
+                                    </h4>
+                                    <div>3.3 가솔린 터보  | 마스터즈 AWD</div>
+                                    <img src="img/car02.png" alt="The 20204 K9" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">출시일</div>
+                                        <div class="col-sm-8">2024-04-02</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">3,342 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">370 ps / 6,000 rpm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">외장컬러</div>
+                                        <div class="col-sm-8">딥 크로마 블루</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(4)</div>
+                                        <div class="col-sm-8">Lexion 프리미엄 사운드<br>프리미엄 팩<br>뒷좌석 듀얼 모니터 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">88,880,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>The Kia EV6 GT
+                                        <span class="badge">TOP 3</span>
+                                    </h4>
+                                    <div>EV 전기차  | GT 4WD A/T</div>
+                                    <img src="img/car03.png" alt="The Kia EV6 GT" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">출시일</div>
+                                        <div class="col-sm-8">2024-03-04</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배터리 용량</div>
+                                        <div class="col-sm-8">77.4 kWh</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">430 kW / 585 ps</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">외장컬러</div>
+                                        <div class="col-sm-8">문스케이프 매트 그레이</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(2)</div>
+                                        <div class="col-sm-8">빌트인 캠<br>와이드 선루프<br>&nbsp;</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">77,680,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            <!-- 웹 -->         
                     <div class="col-sm-4">
                         <div class="box">
                             <h4>The new EV6
@@ -244,6 +409,126 @@
             <!-- 연비효율 -->
             <div id="menu1" class="tab-pane fade">
                 <div class="row">
+                    <!-- 모바일 -->
+                    <div id="carousel2" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel2" data-slide-to="1"></li>
+                          <li data-target="#carousel2" data-slide-to="2"></li>
+                        </ol>
+                      
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="box">
+                                    <h4>니로
+                                        <span class="badge">TOP 1</span>
+                                    </h4>
+                                    <div>1.6 하이브리드  | 트렌디 2DW DCT</div>
+                                    <img src="img/car01-2.png" alt="니로" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">복합 연비</div>
+                                        <div class="col-sm-8">20.8 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">도심 연비</div>
+                                        <div class="col-sm-8">21.9 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">고속도로 연비</div>
+                                        <div class="col-sm-8">19.6 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,580 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(2)</div>
+                                        <div class="col-sm-8">컨비니언스<br>내비게이션<br>&nbsp;</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">30,020,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>K8
+                                        <span class="badge">TOP 2</span>
+                                    </h4>
+                                    <div>1.6 터보 하이브리드 | 시그니처 A/T</div>
+                                    <img src="img/car02-2.png" alt="K8" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">복합 연비</div>
+                                        <div class="col-sm-8">17.1 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">도심 연비</div>
+                                        <div class="col-sm-8">17.2 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">고속도로 연비</div>
+                                        <div class="col-sm-8">16.9 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(4)</div>
+                                        <div class="col-sm-8">드라이브 와이즈 (시그니처)<br>전자제어 서스펜션<br>HUD팩+스마트 커넥트 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">50,270,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>스포티지
+                                        <span class="badge">TOP 3</span>
+                                    </h4>
+                                    <div>1.6 터포 하이브리드  | 30th Edition 그린내장 4WD A/T</div>
+                                    <img src="img/car03-2.png" alt="스포티지" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">복합 연비</div>
+                                        <div class="col-sm-8">15.2 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">도심 연비</div>
+                                        <div class="col-sm-8">15.4 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">고속도로 연비</div>
+                                        <div class="col-sm-8">14.9 km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(2)</div>
+                                        <div class="col-sm-8">빌트인 캠(하이브리드)<br>모니터링 팩(하이브리드 시그니처)<br>&nbsp;</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">43,900,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- 웹 -->    
                     <div class="col-sm-4">
                         <div class="box">
                             <h4>니로
@@ -358,6 +643,126 @@
             <!-- 적재공간 -->
             <div id="menu2" class="tab-pane fade">
                 <div class="row">
+                    <!-- 모바일 -->
+                    <div id="carousel3" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel3" data-slide-to="1"></li>
+                          <li data-target="#carousel3" data-slide-to="2"></li>
+                        </ol>
+                      
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="box">
+                                    <h4>쏘렌토
+                                        <span class="badge">TOP 1</span>
+                                    </h4>
+                                    <div>1.6 하이브리드  | 5인승 시그니처 그래비티 2WD A/T</div>
+                                    <img src="img/car01-3.png" alt="쏘렌토" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">트렁크 용량</div>
+                                        <div class="col-sm-8">705ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">복합연비</div>
+                                        <div class="col-sm-8">15.7km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">180 ps / 5,550 rpm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(9)</div>
+                                        <div class="col-sm-8">컴포트(그래비티)<br>드라이브 와이즈<br>HUD + 빌트인 캠 2 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">51,470,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>스포티지
+                                        <span class="badge">TOP 2</span>
+                                    </h4>
+                                    <div>1.6 터보 하이브리드  |  시그니처 2WD A/T</div>
+                                    <img src="img/car02-3.png" alt="스포티지" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">트렁크 용량</div>
+                                        <div class="col-sm-8">637ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">복합연비</div>
+                                        <div class="col-sm-8">16.7km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">180 ps / 5,500 rpm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(2)</div>
+                                        <div class="col-sm-8">모니터링 팩(하이브리드 시그니처)<br>스타일(하이브리드 시그니처)<br>&nbsp;</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">40,160,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>모하비
+                                        <span class="badge">TOP 3</span>
+                                    </h4>
+                                    <div>3.0 디젤  | 5인승 플래티넘 그래비티 4WD A/T</div>
+                                    <img src="img/car03-3.png" alt="모하비" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">트렁크 용량</div>
+                                        <div class="col-sm-8">580ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">복합연비</div>
+                                        <div class="col-sm-8">9.3km/ℓ</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">2,959 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">최고 출력</div>
+                                        <div class="col-sm-8">257 ps / 3,800 rpm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션</div>
+                                        <div class="col-sm-8">&nbsp;<br>&nbsp;<br>&nbsp;</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">52,020,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- 웹 -->                          
                     <div class="col-sm-4">
                         <div class="box">
                             <h4>쏘렌토
@@ -472,6 +877,138 @@
             <!-- 안전성 -->
             <div id="menu3" class="tab-pane fade">
                 <div class="row">
+                    <!-- 모바일 -->
+                    <div id="carousel4" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel4" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel4" data-slide-to="1"></li>
+                          <li data-target="#carousel4" data-slide-to="2"></li>
+                        </ol>
+                      
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="box">
+                                    <h4>스포티지
+                                        <span class="badge">TOP 1</span>
+                                    </h4>
+                                    <div>1.6 터보 하이브리드  | 시그니처 그래비티 프리미엄옵션 4WD A/T</div>
+                                    <img src="img/car01-4.png" alt="스포티지" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 등급</div>
+                                        <div class="col-sm-8">1등급</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">> 충돌 안전</div>
+                                        <div class="col-sm-8 btn_icon">
+                                            <button class="modal_btn">
+                                                <img src="img/info.svg" alt="인포">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 점수</div>
+                                        <div class="col-sm-8">94.10점c</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(4)</div>
+                                        <div class="col-sm-8">빌트인 캠(하이브리드)<br>모니터링 팩(하이브리드 시그니처)<br>프리미엄(시그니처) 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">44,870,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>K8
+                                        <span class="badge">TOP 2</span>
+                                    </h4>
+                                    <div>1.6 터보 하이브리드  |  시그니처 A/T</div>
+                                    <img src="img/car02-4.png" alt="K8" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 등급</div>
+                                        <div class="col-sm-8">1등급</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">> 충돌 안전</div>
+                                        <div class="col-sm-8 btn_icon">
+                                            <button class="modal_btn">
+                                                <img src="img/info.svg" alt="인포">
+                                            </button>
+                                        </div>
+                                    </div>    
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 점수</div>
+                                        <div class="col-sm-8">93.40점c</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(5)</div>
+                                        <div class="col-sm-8">컴포트(하이브리드)<br>드라이브 와이즈(시그니처)<br>전자제어 서스펜션 등</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">51,210,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="item">
+                                <div class="box">
+                                    <h4>셀토스
+                                        <span class="badge">TOP 3</span>
+                                    </h4>
+                                    <div>1.6 가솔린  | 트렌디 2WD A/T</div>
+                                    <img src="img/car03-4.png" alt="셀토스" width="90%">
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 등급</div>
+                                        <div class="col-sm-8">1등급</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">> 충돌 안전</div>
+                                        <div class="col-sm-8 btn_icon">
+                                            <button class="modal_btn">
+                                                <img src="img/info.svg" alt="인포">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">종합 안전 점수</div>
+                                        <div class="col-sm-8">92.02점c</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">배기량</div>
+                                        <div class="col-sm-8">1,598 cc</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">옵션(3)</div>
+                                        <div class="col-sm-8">컨비니언스<br>드라이브 와이즈<Br>10.25인치 내비게이션</div>
+                                    </div>
+                                    <hr>
+                                    <div class="price">24,610,000<small>원</small></div>
+                                    <div class="btn-box">
+                                        <a href="#" class="btn btn-default">자세히 보기</a>
+                                        <a href="#" class="btn btn-black">견적 내기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- 웹 -->                      
                     <div class="col-sm-4">
                         <div class="box">
                             <h4>스포티지
@@ -485,28 +1022,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">> 충돌 안전</div>
-                                <div class="col-sm-8">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal1">
+                                <div class="col-sm-8 btn_icon">
+                                    <button class="modal_btn">
                                         <img src="img/info.svg" alt="인포">
                                     </button>
-                                    <div id="modal1" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">신차 안전도 평가 안내</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <ul>
-                                                        <li>본 신차안전도 평가결과는 국토교통부 주관 안전도 평가 후 발표된 자료입니다.(교통안전공단 자세한 내용 www.kncap.org 참조)</li>
-                                                        <li>안전도 종합등급 안전도평가에서 실시하고 있는 정면충돌, 측면충돌, 보행자 등 22개 항목의 평가 결과를 종합하여 평가 대상 차량의 안전도를 등급(1~5등급)과 점수(100점 만점)로 소비자들에게 제공합니다.</li>
-                                                        <li>1등급일수록 가장 안전한 차량입니다.</li>
-                                                        <li>매년 자동차 판매수가 많거나 판매가 급증 추세인 차 그리고 과거 평가를 하지 않은 모델 중에서 평가를 실시하며, 평가에 사용된 차량의 에어백 등의 안전장비는 실제 구입하시는 차량과 다를 수 있으므로 확인 하시길 바랍니다.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -543,28 +1062,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">> 충돌 안전</div>
-                                <div class="col-sm-8">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal2">
+                                <div class="col-sm-8 btn_icon">
+                                    <button class="modal_btn">
                                         <img src="img/info.svg" alt="인포">
                                     </button>
-                                    <div id="modal2" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">신차 안전도 평가 안내</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <ul>
-                                                        <li>본 신차안전도 평가결과는 국토교통부 주관 안전도 평가 후 발표된 자료입니다.(교통안전공단 자세한 내용 www.kncap.org 참조)</li>
-                                                        <li>안전도 종합등급 안전도평가에서 실시하고 있는 정면충돌, 측면충돌, 보행자 등 22개 항목의 평가 결과를 종합하여 평가 대상 차량의 안전도를 등급(1~5등급)과 점수(100점 만점)로 소비자들에게 제공합니다.</li>
-                                                        <li>1등급일수록 가장 안전한 차량입니다.</li>
-                                                        <li>매년 자동차 판매수가 많거나 판매가 급증 추세인 차 그리고 과거 평가를 하지 않은 모델 중에서 평가를 실시하며, 평가에 사용된 차량의 에어백 등의 안전장비는 실제 구입하시는 차량과 다를 수 있으므로 확인 하시길 바랍니다.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -601,28 +1102,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">> 충돌 안전</div>
-                                <div class="col-sm-8">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal3">
+                                <div class="col-sm-8 btn_icon">
+                                    <button class="modal_btn">
                                         <img src="img/info.svg" alt="인포">
                                     </button>
-                                    <div id="modal3" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">신차 안전도 평가 안내</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <ul>
-                                                        <li>본 신차안전도 평가결과는 국토교통부 주관 안전도 평가 후 발표된 자료입니다.(교통안전공단 자세한 내용 www.kncap.org 참조)</li>
-                                                        <li>안전도 종합등급 안전도평가에서 실시하고 있는 정면충돌, 측면충돌, 보행자 등 22개 항목의 평가 결과를 종합하여 평가 대상 차량의 안전도를 등급(1~5등급)과 점수(100점 만점)로 소비자들에게 제공합니다.</li>
-                                                        <li>1등급일수록 가장 안전한 차량입니다.</li>
-                                                        <li>매년 자동차 판매수가 많거나 판매가 급증 추세인 차 그리고 과거 평가를 하지 않은 모델 중에서 평가를 실시하며, 평가에 사용된 차량의 에어백 등의 안전장비는 실제 구입하시는 차량과 다를 수 있으므로 확인 하시길 바랍니다.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -649,8 +1132,7 @@
                 <div class="sort">※ 종합 안전 점수는 국토교통부 주관 안전도 평가 결과 기준이며 차량별 사양구성은 최다 판매 기준입니다.</div> 
             </div>
         </div>
-    </div>
-
+    </div>    
 
     <!-- ETC ----------------------------------------------------------------------------------------------->
     <div id="etc" class="container">
@@ -723,7 +1205,7 @@
                 </div>
             </div>
         </div>
-        <div id="news2" class="row">
+        <div id="news2" class="row animate__animated">
             <div class="col-sm-4">
                 <h4>뉴스</h4>
                 <p>기아, 제 11회 스킬 월드컵 성료</p>
@@ -931,5 +1413,6 @@
         </div>
 
     </div>
+       
 </body>
 </html>
